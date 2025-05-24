@@ -1,0 +1,517 @@
+/* Styles spÃ©cifiques Ã  la page d'Ã©dition d'abonnement - BasÃ© sur abonnement_liste.css et salle_edit.css */
+
+body {
+  font : 1em roboto; /* Assurez-vous que la police 'roboto' est disponible ou changez pour une police web-safe */
+  color : #000000;
+  background-color : #ebebeb;
+  text-align : left;
+  margin : 0;
+  padding: 20px; /* Ajouter un padding au corps pour ne pas coller les bords */
+}
+
+a {
+  cursor : pointer;
+}
+
+label {
+  margin-top : 0;
+  font-size  : 0.9em;
+  text-align : right;
+  margin-right : 5px;
+}
+
+input {
+  border : 1px solid #5b5b5b;
+  color : #000000;
+  font : inherit;
+  font-size : 1em;
+  text-align : left;
+  padding: 0.5em;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+input[type=button] {
+  cursor : pointer;
+  font-size : 1em;
+  padding: 12px 15px;
+  border-radius: 4px;
+  border : none;
+  background-color : #007bff;
+  color : #ffffff;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  line-height: normal; /* Assurer une hauteur de ligne normale pour un meilleur centrage vertical */
+}
+
+input[type=button]:hover {
+  background-color : #0056b3;
+  color : #ffffff;
+}
+
+input[type=button].btnannuler {
+  background-color : #dc3545;
+}
+input[type=button].btnannuler:hover {
+  background-color : #c82333;
+  color : #ffffff;
+}
+input[type=button].btnretour {
+  background-color  : #28a745;
+}
+input[type=button].btnretour:hover {
+  background-color : #218838;
+  color : #ffffff;
+}
+
+.primary-button {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.primary-button:hover {
+    background-color: #0056b3;
+}
+
+select {
+  border : solid 1px #ccc;
+  margin : 0;
+  padding: 0.5em;
+  color : #000000;
+  cursor : pointer;
+  font-size : 1em;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+select option:hover {
+  background-color : #e9ecef;
+}
+
+/* Titres de section */
+.labeltitre {
+  color : #ffffff;
+  background-color  : #5b5b5b;
+  font-weight : bold;
+  padding : 10px 15px;
+  width:100%;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+}
+
+/* Messages d'erreur */
+.error-message {
+  display: block;
+  color: #dc3545;
+  font-size: 0.8em;
+  margin-top: 5px;
+  margin-left: 160px;
+  text-align: left;
+}
+
+.labelerreur {
+  display: none;
+}
+
+/* Titre principal de la page */
+.divtitre {
+  background-color  : #5b5b5b;
+  color : #ffffff;
+  padding : 10px 15px;
+  margin-bottom: 20px;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.divaction {
+  margin : 10px;
+  float : right;
+}
+
+/* Conteneur principal des dÃ©tails de l'abonnement */
+#div_abonnement_detail {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Conteneur du formulaire pour limiter la largeur */
+.form-container {
+    max-width: 900px; /* Limite la largeur maximale */
+    margin-left: 20px; /* Aligne le conteneur Ã  gauche avec un peu de marge */
+    margin-right: auto; /* Laisse la marge droite automatique */
+}
+
+/* Styles pour les fieldsets (sections du formulaire : Identification, AdhÃ©rent) */
+fieldset {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+}
+
+legend {
+    color: #2c3e50;
+    font-weight: 600;
+    padding: 0 10px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* AmÃ©lioration des form-group avec Flexbox */
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.form-group label {
+    flex-basis: 150px;
+    flex-shrink: 0;
+    text-align: right;
+    margin-right: 0;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group textarea,
+.form-group select {
+     flex-grow: 1;
+}
+
+#div_abonnement_detail input[type="text"],
+#div_abonnement_detail input[type="date"],
+#div_abonnement_detail textarea,
+#div_abonnement_detail select {
+     width: auto;
+}
+
+textarea {
+    height: 80px;
+    resize: vertical;
+    vertical-align: top;
+}
+
+.adherent-details {
+    display: block;
+    font-size: 0.8em;
+    color: #555;
+    white-space: pre-wrap;
+    margin-top: 5px;
+    margin-left: 160px;
+    text-align: left;
+    max-width: 400px; /* Limite la largeur pour ne pas qu'il aille trop loin */
+}
+
+/* Styles pour les thÃªmes souscrits - initialement cachÃ©s */
+#div_abonnement_theme {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+/* Nouvelle rÃ¨gle pour le conteneur flex des thÃªmes */
+.theme-flex-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+/* Styles pour l'en-tÃªte de la section thÃªmes */
+#div_abonnement_theme .theme-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+/* Style pour le total alignÃ© Ã  gauche au-dessus du tableau */
+.theme-total-left {
+    font-weight: bold;
+    color: #2c3e50;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    text-align: left;
+    background-color: #f0f0f0; /* Ajout d'un fond lÃ©ger */
+    padding: 8px 12px; /* Ajout de rembourrage */
+    border-radius: 4px; /* Coins lÃ©gÃ¨rement arrondis */
+    display: inline-block; /* Permet d'appliquer le fond seulement autour du contenu */
+}
+
+/* Conteneur pour le total et le tableau des thÃ¨mes */
+.theme-table-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+    flex-shrink: 1;
+    min-width: 300px;
+    overflow-x: auto;
+}
+
+/* Tableau des thÃªmes */
+#table_theme {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+#table_theme th, #table_theme td {
+     padding: 10px;
+     text-align: left;
+     border-bottom: 1px solid #eee;
+}
+
+#table_theme th{
+  background-color: #ced4da;
+}
+
+#table_theme tbody tr:nth-child(even) {
+  background-color : #f8f9fa;
+}
+
+#table_theme tbody tr {
+   background-color : #ffffff;
+   height : auto;
+}
+
+#table_theme td:last-child, #table_theme th:last-child {
+    text-align: center;
+}
+#table_theme td:nth-last-child(2), #table_theme th:nth-last-child(2) {
+    text-align: center;
+}
+
+/* Styles pour les icÃ´nes dans le tableau */
+.img_modification, .img_corbeille {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    margin: 0 5px;
+}
+
+.img_modification {
+  background-image: url('../images/edit.svg');
+}
+
+.img_corbeille {
+  background-image: url('../images/delete.svg');
+}
+
+/* Styles pour la section choisir thÃ¨me (cÃ´tÃ© droit) */
+.theme-edit-controls {
+    flex-basis: 250px;
+    flex-grow: 1;
+    flex-shrink: 0;
+    background-color: #e9ecef;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.theme-edit-controls .divtitre {
+    font-size: 1.1em;
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: #ced4da;
+    color: #495057;
+    border-radius: 4px;
+}
+
+.theme-rubrique {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.theme-rubrique .form-group {
+    margin-bottom: 0;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.theme-rubrique .form-group label {
+    flex-basis: auto;
+    text-align: left;
+}
+
+.theme-rubrique select#liste_theme {
+    flex-grow: 1;
+    width: 100%;
+    height: auto;
+    min-height: 100px;
+}
+
+.theme-rubrique .checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.theme-rubrique .actions-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+/* Styles pour le nouvel adhÃ©rent section */
+#div_nouvel_adherent {
+     margin-top: 15px; 
+     border-top: 1px solid #eee; 
+     padding-top: 15px;
+     background-color: #e9ecef;
+    padding: 20px;
+     border-radius: 8px;
+     margin-bottom: 20px;
+}
+
+#div_nouvel_adherent h3 {
+    margin-top: 0;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+#div_nouvel_adherent .form-actions {
+     display: flex;
+     justify-content: flex-end;
+     gap: 10px;
+     margin-top: 15px;
+}
+
+/* Styles pour la liste des adhÃ©rents */
+#div_liste_adherents {
+     margin-top: 15px; 
+     border-top: 1px solid #eee; 
+     padding-top: 15px;
+     background-color: #e9ecef;
+     padding: 20px;
+     border-radius: 8px;
+     margin-bottom: 20px;
+}
+
+#div_liste_adherents h3 {
+    margin-top: 0;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+#table_liste_adherents_container {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#table_liste_adherents {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#table_liste_adherents th, #table_liste_adherents td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+#table_liste_adherents th {
+    background-color: #ced4da;
+    color: #495057;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+#table_liste_adherents tbody tr:nth-child(even) {
+  background-color : #f8f9fa;
+}
+
+#table_liste_adherents tbody tr {
+   background-color : #ffffff;
+   height : auto;
+}
+
+#table_liste_adherents button {
+    padding: 5px 10px;
+    font-size: 0.9em;
+}
+
+/* Styles pour les boutons d'action principaux */
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Alignement du bouton Ajouter ThÃ¨me (dÃ©placÃ©) */
+.div_add_theme_button {
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+/* Masquer l'ancien style d'erreur s'il existe encore dans HTML */
+.labelerreur {
+    display: none;
+}
+
+/* Assurer que les Ã©lÃ©ments prennent la bonne taille */
+input[type="text"], input[type="date"], textarea, select {
+    box-sizing: border-box;
+}
+
+.theme-edit-controls .form-group label {
+    flex-basis: auto;
+    text-align: left;
+}
+
+.theme-edit-controls select#liste_theme {
+    flex-grow: 1;
+    width: auto;
+}
+
+/* Styles spÃ©cifiques aux labels d'erreur dans la section nouvel adhÃ©rent */
+#div_nouvel_adherent .error-message {
+    margin-left: 160px; /* Aligner avec les champs aprÃ¨s le label de 150px + 10px de gap */
+    display: block; /* S'assurer qu'il est sur sa propre ligne */
+    margin-top: 5px; /* Ajouter un peu d'espace au-dessus */
+}
+
+/* Styles spÃ©cifiques pour la liste dÃ©roulante de la civilitÃ© dans le formulaire nouvel adhÃ©rent */
+#div_nouvel_adherent #edt_adherent_civ {
+    width: 100px; /* DÃ©finir une largeur fixe */
+    margin-right: 10px; /* Ajouter de la marge Ã  droite */
+    flex-shrink: 0; /* EmpÃªcher de rÃ©trÃ©cir */
+}
+
+#div_abonnement_detail input[type="text"],
+#div_abonnement_detail input[type="date"],
+#div_abonnement_detail textarea,
+#div_abonnement_detail select {
+    width: auto;
+}
+
+/* Classe pour appliquer un effet de flou aux champs non modifiables */
+.blurred {
+    background-color: #f5f5f5; /* Couleur de fond pour indiquer le champ non modifiable */
+    cursor: not-allowed; /* Change le curseur pour indiquer qu'il n'est pas interactif */
+    pointer-events: none; /* EmpÃªche toute interaction souris */
+}

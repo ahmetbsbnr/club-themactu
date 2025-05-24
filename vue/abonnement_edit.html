@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Edition d'un abonnement</title>
+  <link type="text/css" rel="stylesheet" href="css/abonnement.css">
+  <link type="text/css" rel="stylesheet" href="css/abonnement_edit.css">
+  <script type="module" src="../controleur/abonnement_edit.js" defer></script>
+</head>
+<body>
+  <div id="div_abonnement_titre" class="divtitre"> Détail d'un abonnement</div>
+  <div id="div_abonnement_detail">
+    <div class="form-container">
+      <fieldset>
+        <legend>IDENTIFICATION</legend>
+        <div class="form-group">
+          <label for="edt_abonnement_num">Numéro</label>
+          <span><input id="edt_abonnement_num" placeholder="n° abonnement" size="5" type="text"></span>
+          <label for="edt_abonnement_date">Le</label>
+          <span><input id="edt_abonnement_date" placeholder="Date d'abonnement" size="15" type="date"></span>
+        </div>
+        <div class="form-group">
+          <label for="edt_abonnement_comment">Commentaire</label>
+          <textarea id="edt_abonnement_comment" placeholder="Commentaires sur l'abonnement"></textarea>
+        </div>
+        <label id="lbl_erreur_num" class="error-message"></label>
+        <label id="lbl_erreur_date" class="error-message"></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>ADHÉRENT</legend>
+        <div class="form-group">
+          <label for="edt_abonnement_adherent">numéro</label>
+          <span><input id="edt_abonnement_adherent" placeholder="numéro adhérent" size="5" type="text"></span>
+          <button id="btn_choisir_adherent" type="button">Choisir Adhérent</button>
+          <button id="btn_nouvel_adherent" type="button">Nouvel Adhérent</button>
+        </div>
+        <label id="lbl_erreur_adherent" class="error-message"></label>
+        <label id="lbl_abonnement_detail_adherent" class="adherent-details"></label>
+
+        <!-- Nouvelle section pour afficher la liste des adhérents -->
+        <div id="div_liste_adherents" style="display: none; margin-top: 15px; border-top: 1px solid #eee; padding-top: 15px;">
+            <h3>Liste des Adhérents</h3>
+            <div id="table_liste_adherents_container" style="max-height: 200px; overflow-y: auto;">
+                <table id="table_liste_adherents">
+                    <thead>
+                        <tr>
+                            <th>Numéro</th>
+                            <th>Nom</th>
+                            <th>Prénom</th>
+                            <th>Ville</th>
+                            <th></th> <!-- Colonne pour le bouton Sélectionner -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Les adhérents seront insérés ici -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Nouvelle section pour ajouter un nouvel adhérent -->
+        <div id="div_nouvel_adherent" style="display: none; margin-top: 15px; border-top: 1px solid #eee; padding-top: 15px;">
+            <h3>Nouvel Adhérent</h3>
+            <div class="form-group">
+                <label for="edt_adherent_civ">Civilité</label>
+                <select id="edt_adherent_civ" >
+                    <option value="">-- Veuillez choisir une option --</option>
+                    <option value="Homme">Homme</option>
+                    <option value="Femme">Femme</option>
+                    <option value="Autres">Autres</option>
+                </select>
+                <label id="lbl_erreur_adherent_civ" class="error-message"></label>
+            </div>
+            <div class="form-group">
+                <label for="edt_adherent_nom">Nom</label>
+                <input type="text" id="edt_adherent_nom">
+                <label id="lbl_erreur_adherent_nom" class="error-message"></label>
+            </div>
+            <div class="form-group">
+                <label for="edt_adherent_prenom">Prénom</label>
+                <input type="text" id="edt_adherent_prenom">
+                <label id="lbl_erreur_adherent_prenom" class="error-message"></label>
+            </div>
+             <div class="form-group">
+                <label for="edt_adherent_adr">Adresse</label>
+                <input type="text" id="edt_adherent_adr">
+                <label id="lbl_erreur_adherent_adr" class="error-message"></label>
+            </div>
+             <div class="form-group">
+                <label for="edt_adherent_cp">Code Postal</label>
+                <input type="text" id="edt_adherent_cp" size="10">
+                <label id="lbl_erreur_adherent_cp" class="error-message"></label>
+            </div>
+             <div class="form-group">
+                <label for="edt_adherent_ville">Ville</label>
+                <input type="text" id="edt_adherent_ville">
+                <label id="lbl_erreur_adherent_ville" class="error-message"></label>
+            </div>
+             <div class="form-group">
+                <label for="edt_adherent_mel">Email</label>
+                <input type="text" id="edt_adherent_mel">
+                <label id="lbl_erreur_adherent_mel" class="error-message"></label>
+            </div>
+             <div class="form-group">
+                <label for="select_adherent_csp">CSP</label>
+                 <select id="select_adherent_csp"></select>
+                 <label id="lbl_erreur_adherent_csp" class="error-message"></label>
+            </div>
+            <div class="form-actions">
+                <button id="btn_valider_nouvel_adherent" type="button">Valider Nouvel Adhérent</button>
+                <button id="btn_annuler_nouvel_adherent" type="button" class="btnannuler">Annuler</button>
+            </div>
+        </div>
+
+        <!-- Bouton pour valider (anciennement Ajouter Thème) -->
+        <div class="div_add_theme_button">
+            <input type="button" id="btn_ajouter_theme" class="btnretour" value="Ajouter un thème">
+        </div>
+
+        <!-- Label d'erreur pour les thèmes (replacé ici) -->
+        <label id="lbl_erreur_theme" class="error-message"></label>
+
+      </fieldset>
+
+      <div id="div_abonnement_theme">
+        <div class="theme-header">
+          <span class="labeltitre">Thèmes souscrits</span>
+        </div>
+
+          <!-- Nouvelle div pour le conteneur flex des thèmes -->
+          <div class="theme-flex-container">
+        <div class="theme-table-container">
+          <div class="theme-total-left">
+            Total : <span id="lbl_theme_total"> 0 €</span>
+          </div>
+          <table id="table_theme">
+            <thead>
+              <tr>
+                <th>Libellé</th>
+                <th>Tarif de base</th>
+                <th>Version Papier</th>
+                <th>Montant</th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Les données seront insérées dynamiquement ici -->
+            </tbody>
+          </table>
+        </div>
+            <div class="theme-edit-controls" style="display: none;">
+          <div class="divtitre" >Choisir un thème</div>
+          <div class="theme-rubrique">
+            <div class="form-group">
+              <select id="liste_theme" size="6"></select>
+              <label id="lbl_erreur_select_theme" class="error-message"></label>
+            </div>
+            <div class="checkbox-group">
+              <label for="check_theme_papier">Version papier</label>
+              <span><input id="check_theme_papier" type="checkbox"></span>
+            </div>
+            <div class="actions-container">
+              <input class="primary-button" id="btn_theme_valider" type="button" value="Valider">
+              <input class="btnannuler" id="btn_theme_annuler" type="button" value="Annuler">
+            </div>
+          </div>
+        </div>
+      </div>
+        </div>
+
+      </fieldset>
+
+      <div class="form-actions">
+        <input id="btn_abonnement_valider" class="primary-button" value="Ajouter" type="button">
+        <input id="btn_abonnement_annuler" class="btnannuler" value="Annuler" type="button">
+        <input id="btn_abonnement_retour" class="btnretour" value="Retour" type="button">
+      </div>
+    </div>
+  </div>
+</body>
+</html>
