@@ -106,13 +106,13 @@ INSERT INTO `theme` VALUES ('1','manga','7.00'), ('2','comédie','4.00'), ('3','
 , ('14','militaire','9.00'), ('15','guerre','7.00'), ('16','épouvante','5.00'), ('17','droit','12.00');
 
 INSERT INTO `adherent` VALUES
- ('1','M.','BOZZO','Raoul','24 rue du cirque','57000','Metz','bozzo.raoul@gmail.com','33')
-, ('2','Mme','CREZINA','Albertine','37 avenue Caranaval','54000','Nancy','alb.crezina@free.fr','42')
-, ('3','M.','DRAGON','Fragonard','7 rue du Feu éteint','75000','Paris','DragonFra@gmail.com','61')
-, ('4','M.','FICZERSKI','Karloff','2a rue des Tyrans','57000','Metz','karloff5577@bbox.fr','12')
-, ('5','Mme','TALAOUI','Amina','','','','talaouinon@gmail.com','42')
-, ('6','Mme','RICANEUR','Eloise','98 impasse du Muguet','54000','Nancy','ricaneuresiole@bbox.fr','36')
-, ('7','M.','LEBRAILLARD','Phil',NULL,NULL,NULL,'phil.lebraillard@gmail.com','72');
+ ('1','M.','BOZZO','Raoul','24 rue du cirque','57000','Metz','bozzo.raoul@exemple.com','33')
+, ('2','Mme','CREZINA','Albertine','37 avenue Caranaval','54000','Nancy','alb.crezina@exemple.com','42')
+, ('3','M.','DRAGON','Fragonard','7 rue du Feu éteint','75000','Paris','DragonFra@exemple.com','61')
+, ('4','M.','FICZERSKI','Karloff','2a rue des Tyrans','57000','Metz','karloff5577@exemple.com','12')
+, ('5','Mme','TALAOUI','Amina','','','','talaouinon@exemple.com','42')
+, ('6','Mme','RICANEUR','Eloise','98 impasse du Muguet','54000','Nancy','ricaneuresiole@exemple.com','36')
+, ('7','M.','LEBRAILLARD','Phil',NULL,NULL,NULL,'phil.lebraillard@exemple.com','72');
 
 INSERT INTO `adhesion` VALUES ('1','5',true), ('1','6',false), ('1','7',false), ('2','8',false)
 , ('2','9',true), ('2','10',true), ('2','11',false), ('5','12',false), ('5','13',false), ('5','14',true)
